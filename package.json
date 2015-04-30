@@ -1,0 +1,35 @@
+{
+  "name": "rich-message",
+  "description": "Turn boring text into rich HTML messages.",
+  "version": "1.0.0",
+  "author": "moose-team",
+  "bugs": {
+    "url": "https://github.com/moose-team/rich-message/issues"
+  },
+  "devDependencies": {
+    "standard": "^3.7.2",
+    "tap-spec": "^3.0.0",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/moose-team/rich-message",
+  "keywords": [
+    "chat",
+    "embed",
+    "emoji",
+    "friends",
+    "html",
+    "markdown",
+    "message",
+    "moose",
+    "rich"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moose-team/rich-message.git"
+  },
+  "scripts": {
+    "test": "standard && tape test/*.js | tap-spec"
+  }
+}
