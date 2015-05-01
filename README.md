@@ -5,8 +5,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/rich-message.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/rich-message
-[travis-image]: https://img.shields.io/travis/Flet/rich-message.svg?style=flat-square
-[travis-url]: https://travis-ci.org/Flet/rich-message
+[travis-image]: https://img.shields.io/travis/moose-team/rich-message.svg?style=flat-square
+[travis-url]: https://travis-ci.org/moose-team/rich-message
 
 
 
@@ -28,4 +28,4 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## License
 
-[ISC](LICENSE.md)
+[MIT](LICENSE.md)
