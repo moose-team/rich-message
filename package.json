@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "standard": "^3.7.2",
-    "tap-spec": "^3.0.0",
+    "tap-dot": "^1.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/moose-team/rich-message",
@@ -30,7 +30,7 @@
     "url": "https://github.com/moose-team/rich-message.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js | tap-spec"
+    "test": "standard && tape test/*.js | tap-dot"
   },
   "dependencies": {
     "ghlink": "^0.1.2",
