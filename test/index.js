@@ -4,7 +4,7 @@ var mergeMessages = richMessage.mergeMessages
 
 test('link replacement', function (t) {
   var message = {
-    text: '#cats #cats #cats not#cat',
+    text: '#cats #cats #cats not#cat #cat!%$',
     username: 'cat',
     timestamp: Date.now()
   }
@@ -12,7 +12,7 @@ test('link replacement', function (t) {
   var output = richMessage(message, 'other_cat')
   var expected = '<div><p>' +
     '<a href="#cats">#cats</a> <a href="#cats">#cats</a> ' +
-    '<a href="#cats">#cats</a> not#cat' +
+    '<a href="#cats">#cats</a> not#cat #cat!%$' +
     '</p><p></p></div>'
 
   t.equal(output.html, expected)
