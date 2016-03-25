@@ -1,7 +1,7 @@
 {
   "name": "rich-message",
   "description": "Turn a plain message into a rich HTML message.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "moose-team",
   "bugs": {
     "url": "https://github.com/moose-team/rich-message/issues"
