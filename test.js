@@ -1,6 +1,31 @@
 var test = require('tape')
-var richMessage = require('../')
+var richMessage = require('./')
 var mergeMessages = richMessage.mergeMessages
+var CAT_URL = 'https://cdn.rawgit.com/moose-team/rich-message/master/cat.png'
+
+test('usage example', function (t) {
+  var message = {
+    text: 'hi maxogden', // text entered by a user
+    username: 'mafintosh', // user's github name
+    timestamp: Date.now()
+  }
+  var username = 'maxogden' // current user's github name (used for highlighting)
+
+  var output = richMessage(message, username)
+  var expected = {
+    text: 'hi maxogden',
+    username: 'mafintosh',
+    anon: false,
+    avatar: 'https://github.com/mafintosh.png',
+    timeago: richMessage.timeago(message.timestamp),
+    html: '<div class="highlight"><p>hi maxogden</p><p></p></div>'
+  }
+
+  t.equal(output.html, expected.html, 'html is correctly formatted')
+  t.false(output.anon, 'user is not anon')
+  t.equal(output.timeago, expected.timeago, 'timeago works as expected')
+  t.end()
+})
 
 test('link replacement', function (t) {
   var message = {
@@ -15,7 +40,7 @@ test('link replacement', function (t) {
     '<a href="#cats">#cats</a> not#cat #cat!%$' +
     '</p><p></p></div>'
 
-  t.equal(output.html, expected)
+  t.equal(output.html, expected, 'links are replaced in output html')
   t.end()
 })
 
@@ -39,7 +64,7 @@ test('anon avatars', function (t) {
   }
 
   var output = richMessage(message, 'other_cat')
-  t.equal(output.avatar, 'static/cat.png')
+  t.equal(output.avatar, CAT_URL)
   t.end()
 })
 
@@ -92,7 +117,9 @@ test('username highlight', function (t) {
   t.end()
 })
 
-test('timeago', function (t) {
+// bug: moment does not calculate time reliably in different environments
+// on travis, 0 returns 1970, on mac os x, 1969
+test.skip('timeago', function (t) {
   var message = {
     text: 'cat',
     username: 'cat',

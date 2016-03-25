@@ -1,15 +1,15 @@
 {
   "name": "rich-message",
-  "description": "Turn boring text into rich HTML messages.",
+  "description": "Turn a plain message into a rich HTML message.",
   "version": "1.0.1",
   "author": "moose-team",
   "bugs": {
     "url": "https://github.com/moose-team/rich-message/issues"
   },
   "devDependencies": {
-    "standard": "^3.7.2",
-    "tap-dot": "^1.0.0",
-    "tape": "^4.0.0"
+    "standard": "^6.0.8",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
   },
   "homepage": "https://github.com/moose-team/rich-message",
   "keywords": [
@@ -30,7 +30,7 @@
     "url": "https://github.com/moose-team/rich-message.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js | tap-dot"
+    "test": "standard && tape test.js | tap-spec"
   },
   "dependencies": {
     "ghlink": "^0.1.2",
